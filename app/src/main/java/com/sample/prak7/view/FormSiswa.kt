@@ -38,15 +38,14 @@ import com.sample.prak7.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FormSiswa(
-    onSubmitClick: () -> Unit = {}
+    pilihanJK: List<String>,
+    onSubmitButtonClicked: (MutableList<String>) -> Unit
 ) {
     var textNama by remember { mutableStateOf(value = "") }
     var textAlamat by remember { mutableStateOf(value = "") }
     var textJK by remember { mutableStateOf(value = "") }
     var textSP by remember { mutableStateOf(value = "") }
 
-
-    val gender: List<String> = listOf("Laki-laki", "Perempuan")
     val statusKawin: List<String> = listOf("Janda", "Lajang", "Duda")
 
     Scaffold(
