@@ -93,7 +93,7 @@ fun FormSiswa(
                 modifier = Modifier.align(Alignment.Start)
             )
             Column {
-                gender.forEach { item ->
+                pilihanJK.forEach { item ->
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -172,7 +172,7 @@ fun FormSiswa(
                 modifier = Modifier.fillMaxWidth(fraction = 1f),
                 enabled = textNama.isNotEmpty() && textJK.isNotEmpty() && textAlamat.isNotEmpty() && textSP.isNotEmpty(),
                 onClick = {
-                    onSubmitClick()
+                    onSubmitButtonClicked(mutableListOf(textNama, textJK, textAlamat))
                 }
             ) {
                 Text(text = stringResource(id = R.string.submit))
